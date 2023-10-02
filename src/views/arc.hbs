@@ -1,0 +1,51 @@
+<style>
+    .body {
+        margin: auto;
+        width: 80%;
+    }
+
+    .conatainer {
+        display: flex;
+        width: 100%;
+        border: 1px solid rgb(196, 196, 196);;
+        flex-basis: 0;
+        height: 120px;
+        padding: 20px;
+        border-radius: 5px;
+        background-color:rgb(240, 240, 240);
+    }
+    .conatainer:hover{
+        background-color:rgb(167, 164, 164);
+        }
+    p {
+        padding: 20px;
+        color: rgb(58, 58, 58);
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    a {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-decoration: none;
+
+    }
+</style>
+<dir class="body">
+    {{#each rows}}
+    <div style="padding: 10px;">
+        <a href="/Documents/{{id_user}}/{{Name_Document}}">
+            <div class="conatainer">
+                <div style="width: 120px; height: 100%;">
+                    <img src="{{path}}" height="120px" alt="">
+                </div>
+                <div>
+                    <p>{{Name_Document}}</p>
+                </div>
+            </div>
+
+        </a>
+    </div>
+    {{else}}
+    <h1> No hay resultado</h1>
+    {{/each}}
+</dir>

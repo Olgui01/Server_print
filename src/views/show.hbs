@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="/Style/Style_show.css">
+{{#if files}}
+<form action="/ar" method="post">
+    <tr>
+        <th>
+            <input type="number" placeholder="Buscar" name="id">
+        </th>
+        <th>
+            <Button>Buscar</Button>
+        </th>
+    </tr>
+</form>
+{{/if}}
+<div class="Container_body">
+    {{#each files}}
+    <div style="padding: px;">
+        <a class="item" href="/ar/{{id}}">
+            <div id="selc">
+                <img src="../img_style/carpeta.png" width="40px"> Carpeta {{id}}
+                  
+            </div>
+              <a id="Delete" href="/qWzw35Qn8K8cGY/{{id}}">Eliminar</a>
+        </a>
+    </div>
+    {{else}}
+    <h1>No hay archivos</h1>
+    {{/each}}
+    </ul>
+</div>

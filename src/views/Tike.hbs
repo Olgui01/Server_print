@@ -1,0 +1,36 @@
+<style>
+    * {
+        text-align: center;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, "Helvetica Neue", sans-serif;
+    }
+
+    .container {
+        top: 45%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+    }
+
+    .img {
+        margin: auto;
+        background: url(../img_style/lista.png) no-repeat center;
+        background-size: 100%;
+        width: 200px;
+        height: 200px;
+    }
+
+    .container_img {
+        padding: 50px;
+    }
+</style>
+<div class="container">
+    <div class="container_img">
+        <div class="img"></div>
+    </div>
+    <div>
+        {{#if id}}
+        <h1>Codigo:</h1>
+        <p style="font-size: 30px;">{{id}}</p>
+        {{/if}}
+    </div>
+</div>

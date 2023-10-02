@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="/Style/Style_home.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<div class="Conten_a">
+    <form action="/update"  method="post" enctype="multipart/form-data">
+        <div class="btn_opcions">
+            <p id="Opcions" onclick="show();">Opciones</p>
+        </div>
+        <div style=" display: flex;justify-content: center;width: 100%;" />
+        <div class="Container_file">
+            <input type="file" name="doc" id="documets" accept=".jpg, .jpeg, .png, .pdf" multiple/>
+        </div>
+</div>
+<div class="container_button">
+    <button>Enviar a Imprimir</button>
+</div>
+<div class="Containeropcion">
+    <div>
+        <div id="button">
+            <input type="button"
+                onclick="herf(`https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Unexpected_token?utm_source=mozilla&utm_medium=firefox-console-errors&utm_campaign=default`);"
+                value="Enviar por Correo">
+        </div>
+    </div>
+    <div>
+        <div>
+            <input type="button" onclick="herf(`https://www.google.com/`);" value="Enviar por WhatsApp">
+        </div>
+    </div>
+</div>
+<p id="texinput">seleccionar archivos</p>
+
+</form>
+</div>
+
+<script>
+    
+    const input = document.querySelector("#documets");
+    input.addEventListener("change", change)
+    function change() {
+        if ( document.querySelector(".Container_file").classList.toggle("show") == false ){
+        document.querySelector(".Container_file").classList.toggle("show");
+        }
+        const form = document.querySelector("form");
+        form.removeChild(document.getElementById("texinput"));
+        const p = document.createElement("p");
+        p.textContent = `${input.files.length} archivo`;
+        p.id = "texinput"
+        form.appendChild(p);
+    }
+    function herf(url) {
+        window.location.href = url;
+    }
+    function show() {
+        const con = document.querySelector(".Containeropcion");
+        const btn = document.querySelector("#Opcions");
+        btn.classList.toggle("show");
+        con.classList.toggle("show");
+    }
+    
+</script>
